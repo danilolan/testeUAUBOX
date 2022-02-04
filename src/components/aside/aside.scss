@@ -1,0 +1,80 @@
+@use '../../assets/config/colors.scss' as c;
+
+aside{
+    background-color: c.$red;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    padding: 30px 10px;
+    box-sizing: border-box;
+    
+    img{
+        max-width: 50%;
+        margin-bottom: 50px;
+    }
+
+    .steps-container{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        
+        .step{
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            text-align: center;
+            margin: 10px 0px;
+            font-weight: 700;
+            font-size: 1.3em;
+            color: #fff;
+
+            .num{
+                width: 32px;
+                height: 32px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #fff;
+                border-radius: 50px;
+                color: c.$red;
+                margin-right: 10px;
+            }
+        }
+
+        .bar-container{
+            width: 2px;
+            height: 12vh;
+            margin: 0px 15px;
+
+            .bar{
+                background-color: #fff;
+                width: 100%;
+
+                &.animation{
+                    animation: progress-bar 2s infinite ease-in-out;
+                }
+                &.active{
+                    height: 100%;
+                }
+            }
+            
+        }
+    }
+}
+
+@keyframes progress-bar {
+    0%{
+        height: 0px;
+    }
+    70% {
+        height: 100%;
+    }
+    100% {
+        height: 0px;
+    }
+}

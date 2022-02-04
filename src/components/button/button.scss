@@ -1,0 +1,31 @@
+@use '../../assets/config/colors.scss' as c;
+
+button{
+    font-family: 'Montserrat';
+    font-size: 1.3em;
+    font-weight: 700;
+    padding: 10px 0px;
+    border-radius: 15px;
+    border: 2px solid c.$red;
+
+    &.fill{
+        background-color: c.$red;
+        color: #fff;     
+        transition: 0.3s;
+        &:hover{
+            cursor: pointer;
+            background-color: c.$red-dark;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        }
+    }
+    &.not-fill{
+        background-color: #fff;
+        color: c.$red;
+        transition: 0.3s;
+        &:hover{
+            cursor: pointer;
+            background-color: rgb(247, 247, 247);
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        }
+    }
+}

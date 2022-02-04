@@ -5,17 +5,22 @@ import './app.scss';
 
 //---COMPONENTS---
 
-//---Others---
+//---ROUTER---
 import { BrowserRouter } from 'react-router-dom'
 import Routes from '../services/Routes'
 
+//---CONTEXT---
+import DataProvider from '../context/data';
+
 function App() {
   return (
-    <div className="app">
-      <BrowserRouter>
-        <Routes/>
-      </BrowserRouter>
-    </div>
+    <DataProvider>
+      <div className="app">
+        <BrowserRouter>
+          <Routes/>
+        </BrowserRouter>
+      </div>
+    </DataProvider>
   );
 }
 

@@ -47,6 +47,7 @@ function Identificacao() {
                         setValue={setEmail}
                         width='500px'
                         error={emailError}
+                        type='email'
                     />
                 </div>
 

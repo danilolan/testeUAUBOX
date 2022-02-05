@@ -6,6 +6,7 @@
     align-items: flex-start;
     justify-content: center;
     width: 300px;
+    margin: 0px 10px;
 
     .label{
         font-size: 1.1em;
@@ -23,6 +24,7 @@
         width: 100%;
         font-weight: 600;
         font-family: 'Montserrat';
+        box-sizing: border-box;
 
         &.error{
             border: 2px solid c.$red;

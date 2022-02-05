@@ -28,6 +28,7 @@ function Identificacao() {
             editData.email = email
             setData(editData)
             navigate("/dados-pessoais", { replace: true });
+            window.dispatchEvent(new Event('popstate'));
         }
         else{
             setEmailError(true)

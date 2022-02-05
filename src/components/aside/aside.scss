@@ -31,7 +31,7 @@ aside{
             margin: 10px 0px;
             font-weight: 700;
             font-size: 1.3em;
-            color: #fff;
+            color: rgba(255, 255, 255, 0.404);
 
             .num{
                 width: 32px;
@@ -39,10 +39,23 @@ aside{
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                background-color: #fff;
+                background-color: rgba(255, 255, 255, 0.404);
                 border-radius: 50px;
                 color: c.$red;
                 margin-right: 10px;
+            }
+
+            &.animation{
+                color: #fff;
+                .num{
+                    background-color: #fff;
+                }
+            }
+            &.active{
+                color: #fff;
+                .num{
+                    background-color: #fff;
+                }
             }
         }
 
@@ -62,7 +75,14 @@ aside{
                     height: 100%;
                 }
             }
+
+            &.animation{
+
+            }
             
+            &.active{
+
+            }
         }
     }
 }

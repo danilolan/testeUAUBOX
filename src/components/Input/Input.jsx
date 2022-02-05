@@ -12,7 +12,8 @@ function Input({ label, value, setValue, error, width, type, mask, maskChar }) {
             <div className="label">{label}</div>
             <InputMask 
                 className={error ? 'error' : ''} 
-                type="text" value={value} 
+                type="text" 
+                value={value} 
                 onChange={ e => setValue(e.target.value)} 
                 name={type}
                 mask={mask}

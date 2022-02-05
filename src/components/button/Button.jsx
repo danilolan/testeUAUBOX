@@ -8,7 +8,7 @@ function Button({click, width, isFill, children}) {
         <button
             className={isFill ? 'fill' : 'not-fill'}
             style={{width}}
-            onClick={() => click()}
+            onClick={(e) => click(e)}
         >
             {children}
         </button>

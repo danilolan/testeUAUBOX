@@ -20,22 +20,18 @@ function Localizacao() {
     const { data, setData } = useData()
     const navigate = useNavigate();
     
-    const [cep, setCep] = useState('');
+    const [cep, setCep] = useState(data.localizacao.cep);
+    const [endereco, setEndereco] = useState(data.localizacao.endereco);
+    const [numero, setNumero] = useState(data.localizacao.numero);
+    const [complemento, setComplemento] = useState(data.localizacao.complemento);
+    const [cidade, setCidade] = useState(data.localizacao.cidade);
+    const [estado, setEstado] = useState(data.localizacao.estado);
+
     const [cepError, setCepError] = useState(false);
-
-    const [endereco, setEndereco] = useState('');
-    const [enderecoError, setEnderecoError] = useState(false);
-
-    const [numero, setNumero] = useState('');
+    const [enderecoError, setEnderecoError] = useState(false); 
     const [numeroError, setNumeroError] = useState(false);
-
-    const [complemento, setComplemento] = useState('');
     const [complementoError, setComplementoError] = useState(false);
-
-    const [cidade, setCidade] = useState('');
     const [cidadeError, setCidadeError] = useState(false);
-
-    const [estado, setEstado] = useState('');
     const [estadoError, setEstadoError] = useState(false);
 
     function searchCep(){

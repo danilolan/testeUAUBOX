@@ -18,11 +18,11 @@ function DadosPessoais() {
     const { data, setData } = useData()
     const navigate = useNavigate();
 
-    const [nome, setNome] = useState('');
-    const [sobrenome, setSobrenome] = useState('');
-    const [cpf, setCpf] = useState('');
-    const [telefone, setTelefone] = useState('');
-    const [dataNascimento, setDataNascimento] = useState('');
+    const [nome, setNome] = useState(data.dadosPessoais.nome);
+    const [sobrenome, setSobrenome] = useState(data.dadosPessoais.sobrenome);
+    const [cpf, setCpf] = useState(data.dadosPessoais.cpf);
+    const [telefone, setTelefone] = useState(data.dadosPessoais.telefone);
+    const [dataNascimento, setDataNascimento] = useState(data.dadosPessoais.dataNascimento);
 
     const [nomeError, setNomeError] = useState(false);
     const [sobrenomeError, setSobrenomeError] = useState(false);

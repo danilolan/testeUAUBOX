@@ -18,7 +18,7 @@ function Identificacao() {
     const navigate = useNavigate();
     const { data, setData } = useData()
 
-    const [email, setEmail] = useState('');
+    const [email, setEmail] = useState(data.email);
     const [emailError, setEmailError] = useState(false);
 
     function next(e){

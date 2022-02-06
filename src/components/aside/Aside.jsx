@@ -10,7 +10,6 @@ function Aside() {
 
     //Progress bar logic
     const [level, setLevel] = useState(['animation','','','']);
-    console.log('header')
     useEffect(() => {
         checkPathName()
         window.addEventListener('popstate', checkPathName);
@@ -58,7 +57,6 @@ function Aside() {
                     <div className="num">4</div>
                     <div className="text">Confirmação</div>
                 </div>
-                <div className="bar-container"> <div className={`bar ${level[3]}`}/> </div>
             </div>
         </aside>
      );

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Routes, Route} from 'react-router'
+import {Routes, Route, Navigate} from 'react-router'
 
 //---Pages---
 import Identificacao from '../pages/identificacao/Identificacao'
@@ -10,7 +10,7 @@ import Confirmacao from '../pages/confirmacao/Confirmacao'
 function routes() {
     return ( 
     <Routes>
-        <Route exact path='/' element={<Identificacao/>}/>
+        <Route exact path='/' element={<Navigate to="/identificacao" />}/>
         <Route path='/identificacao' element={<Identificacao/>}/>
         <Route path='/dados-pessoais' element={<DadosPessoais/>}/>
         <Route path='/localizacao' element={<Localizacao/>}/>

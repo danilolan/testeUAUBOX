@@ -92,9 +92,9 @@ function Localizacao() {
             setEstado('')
         }
 
-        if(validate(cep, 8) && validate(endereco) && validate(numero) && validate(complemento)){
+        if(validate(cep, 8) && validate(endereco) && validate(numero) && validate(complemento) && validate(cidade) && validate(estado)){
             let dataEdit = data
-            dataEdit.localizacao = { cep, endereco, numero , complemento }
+            dataEdit.localizacao = { cep, endereco, numero , complemento, cidade, estado }
             setData(dataEdit)
             navigate("/confirmacao", { replace: true });
             window.dispatchEvent(new Event('popstate'));  

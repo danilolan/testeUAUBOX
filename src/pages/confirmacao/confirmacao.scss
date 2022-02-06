@@ -1,0 +1,60 @@
+@use '../../assets/config/colors.scss' as c;
+
+.confirmacao{
+    margin-left: 250px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+
+    .content-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+
+        .infos-container{
+            padding: 20px;
+            border-radius: 15px;
+
+            margin-right: 10px;
+            margin-left: auto;
+        }
+
+        .planos-container{
+            margin-left: 10px;
+            width: 500px;
+            display: grid;
+            grid-template-rows: 1fr max-content;
+    
+            .top-container{
+                display: grid;
+                grid-template-columns: 50% 50%;
+                align-items: center;
+    
+                img{
+                    width: 100%;
+                }
+    
+                .plano-stats{
+                    text-align: start;
+                    color: c.$red;
+                    font-weight: 600;
+                    margin-right: 20px;
+    
+                    .assinatura{
+                        font-size: 2.3em;
+                        font-weight: 700;
+                        margin-bottom: 10px;
+                    }
+                    .desc{
+                        margin-top: 10px;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+    
+}

@@ -32,14 +32,20 @@ function Localizacao() {
     const [complemento, setComplemento] = useState('');
     const [complementoError, setComplementoError] = useState(false);
 
-    function searchCep(e){
-        console.log('cep')
-        e.preventDefault()
+    const [cidade, setCidade] = useState('');
+    const [cidadeError, setCidadeError] = useState(false);
+
+    const [estado, setEstado] = useState('');
+    const [estadoError, setEstadoError] = useState(false);
+
+    function searchCep(){
         setCepError(false)
         if(validate(cep,8)){
             api.viacep.get(`${cep}/json/`).then( resp => {
                 if(resp.data.logradouro){
-                    setEndereco(`${resp.data.logradouro} - ${resp.data.bairro}`)        
+                    setEndereco(`${resp.data.logradouro} - ${resp.data.bairro}`) 
+                    setCidade(resp.data.localidade)
+                    setEstado(resp.data.uf)
                 }
                 else{
                     setCepError(true)
@@ -52,12 +58,14 @@ function Localizacao() {
     }
 
     function next(e){
-        console.log('next')
         e.preventDefault()
+
         setCepError(false)
         setComplementoError(false)
         setEnderecoError(false)
         setNumeroError(false)
+        setCidadeError(false)
+        setEstadoError(false)
 
         if(!validate(cep, 8)){
             setCepError(true)
@@ -75,6 +83,14 @@ function Localizacao() {
             setComplementoError(true)
             setComplemento('')
         }
+        if(!validate(cidade)){
+            setCidadeError(true)
+            setCidade('')
+        }
+        if(!validate(estado)){
+            setEstadoError(true)
+            setEstado('')
+        }
 
         if(validate(cep, 8) && validate(endereco) && validate(numero) && validate(complemento)){
             let dataEdit = data
@@ -88,11 +104,7 @@ function Localizacao() {
     useEffect(() => {
         if(validate(cep,8)){
             setCepError(false)
-            api.viacep.get(`${cep}/json/`).then( resp => {
-                if(resp.data.logradouro){
-                    setEndereco(`${resp.data.logradouro} - ${resp.data.bairro}`)
-                }
-            })
+            searchCep()
         }
     }, [cep]);
     
@@ -139,6 +151,25 @@ function Localizacao() {
                         error={enderecoError}
                         width='500px'
                         maskChar=''
+                    />
+                </div>
+
+                <div className="row">
+                    <Input
+                        label='Cidade'
+                        value={cidade}
+                        setValue={setCidade}
+                        type='cidade'
+                        error={cidadeError}
+                        width='280px'
+                    />
+                    <Input
+                        label='Estado'
+                        value={estado}
+                        setValue={setEstado}
+                        type='estado'
+                        error={estadoError}
+                        width='200px'
                     />
                 </div>
 

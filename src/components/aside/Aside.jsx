@@ -6,10 +6,15 @@ import './aside.scss'
 //---ASSETS---
 import vectorImg from '../../assets/imgs/vector.png'
 
+//---COMPONENTS---
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+
 function Aside() {
 
-    //Progress bar logic
+    //Progresslogic
     const [level, setLevel] = useState(['animation','','','']);
+    const [progressCircle, setprogressCircle] = useState(0);
     useEffect(() => {
         checkPathName()
         window.addEventListener('popstate', checkPathName);
@@ -21,15 +26,19 @@ function Aside() {
     function checkPathName(){
         if(window.location.pathname === '/identificacao'){
             setLevel(['animation','','',''])
+            setprogressCircle(0)
         }
         else if(window.location.pathname === '/dados-pessoais'){
             setLevel(['active','animation','',''])
+            setprogressCircle(25)
         }
         else if(window.location.pathname === '/localizacao'){
             setLevel(['active','active','animation',''])
+            setprogressCircle(50)
         }
         else if(window.location.pathname === '/confirmacao'){
             setLevel(['active','active','active','animation'])
+            setprogressCircle(75)
         }
     }
 
@@ -57,6 +66,18 @@ function Aside() {
                     <div className="num">4</div>
                     <div className="text">Confirmação</div>
                 </div>
+            </div>
+
+            <div className="progress-circle">
+                <CircularProgressbar 
+                    value={progressCircle}
+                    counterClockwise={true}
+                    styles={buildStyles({
+                        pathColor: `#FF3333`,
+                        trailColor: '#d6d6d6',
+                        backgroundColor: '#3e98c7',
+                    })}
+                />
             </div>
         </aside>
      );

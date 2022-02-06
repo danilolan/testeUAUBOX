@@ -8,11 +8,14 @@ import './identificacao.scss'
 import Input from '../../components/input/Input';
 import Button from '../../components/button/Button';
 
-//---MASKS---
-import emailMask from '../../services/masks/email'
-
 //---CONTEXT---
 import { useData } from '../../context/data'
+
+
+function validateEmail(email) {
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  }
 
 function Identificacao() {
     const navigate = useNavigate();
@@ -23,7 +26,7 @@ function Identificacao() {
 
     function next(e){
         e.preventDefault()
-        if(emailMask(email)){
+        if(validateEmail(email)){
             let editData = data
             editData.email = email
             setData(editData)

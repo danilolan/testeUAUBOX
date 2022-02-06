@@ -8,6 +8,9 @@ import './dadospessoais.scss'
 import Input from '../../components/input/Input';
 import Button from '../../components/button/Button';
 
+//---SERVICES---
+import validate from '../../services/validate'
+
 //---CONTEXT---
 import { useData } from '../../context/data'
 
@@ -26,15 +29,6 @@ function DadosPessoais() {
     const [cpfError, setCpfError] = useState(false);
     const [telefoneError, setTelefoneError] = useState(false);
     const [dataNascimentoError, setDataNascimentoError] = useState(false);
-
-
-
-    function validate(str, length){
-        str = str.replaceAll('_', '').replaceAll('(', '').replaceAll(')', '').replaceAll('.', '').replaceAll('-', '').replaceAll('/', '')
-        if(str === '') return false  
-        if(length && str.length < length) return false
-        else return true
-    }
 
     function next(e){
         e.preventDefault()
@@ -146,14 +140,15 @@ function DadosPessoais() {
                     <Button
                         width='300px'
                         click={back}
+                        type='button'
                     >
                         Voltar
                     </Button>
-
                     <Button
                         isFill={true}
                         width='300px'
                         click={e => next(e)}
+                        type='submit'
                     >
                         Continuar
                     </Button>

@@ -69,15 +69,29 @@ function Aside() {
             </div>
 
             <div className="progress-circle">
-                <CircularProgressbar 
-                    value={progressCircle}
-                    counterClockwise={true}
-                    styles={buildStyles({
-                        pathColor: `#FF3333`,
-                        trailColor: '#d6d6d6',
-                        backgroundColor: '#3e98c7',
-                    })}
-                />
+                <div className="red-pc">
+                    <CircularProgressbar 
+                        value={progressCircle}
+                        counterClockwise={true}
+                        styles={buildStyles({
+                            pathColor: `#FF3333`,
+                            trailColor: '#d6d6d6',
+                            backgroundColor: '#3e98c7',
+                        })}
+                    />
+                </div>
+
+                <div className="white-pc">
+                    <CircularProgressbar 
+                        value={progressCircle}
+                        counterClockwise={true}
+                        styles={buildStyles({
+                            pathColor: `#ffffff`,
+                            trailColor: 'transparent',
+                            backgroundColor: '#646464',
+                        })}
+                    />
+                </div>
             </div>
         </aside>
      );

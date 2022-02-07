@@ -118,7 +118,7 @@ function Localizacao() {
             <div className="title"> Você está quase lá! </div>
 
             <form id='form'>
-                <div className="row">
+                <div className="row always">
                     <Input
                         label='Cep'
                         value={cep}
@@ -193,7 +193,7 @@ function Localizacao() {
 
                 <div className="hr-bar"/>
 
-                <div className="row reverse">
+                <div className="row reverse always">
                     <Button
                         width='300px'
                         click={back}

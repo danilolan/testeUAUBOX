@@ -81,6 +81,8 @@ function Confirmacao() {
 
         //---ENVIAR REQUISIÇÃO
         console.log(data)
+        alert('Enviar requisição:')
+        alert(JSON.stringify(data))
         //-------------------+
     }
     function back(){

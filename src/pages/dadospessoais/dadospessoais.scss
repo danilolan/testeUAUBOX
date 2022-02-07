@@ -18,7 +18,8 @@
 //---BREAKPOINTS---
 @media (max-width: 1000px){
     .dados-pessoais{
-        margin: 50px 0px 0px 0px;
+        margin: 150px 0px 0px 0px;
+        justify-content: flex-start;
     }
 }
 
@@ -47,7 +48,6 @@
             }
         }
         .title{
-            margin: 70px 0px 10px 0px;
             font-size: 2em;
         }
     }

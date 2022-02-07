@@ -136,22 +136,24 @@ function DadosPessoais() {
 
                 <div className="hr-bar"/>
 
-                <div className="row">
-                    <Button
-                        width='300px'
-                        click={back}
-                        type='button'
-                    >
-                        Voltar
-                    </Button>
-                    <Button
-                        isFill={true}
-                        width='300px'
-                        click={e => next(e)}
-                        type='submit'
-                    >
-                        Continuar
-                    </Button>
+                <div className="btn-container">
+                    <div className="row">
+                        <Button
+                            width='300px'
+                            click={back}
+                            type='button'
+                        >
+                            Voltar
+                        </Button>
+                        <Button
+                            isFill={true}
+                            width='300px'
+                            click={e => next(e)}
+                            type='submit'
+                        >
+                            Continuar
+                        </Button>
+                    </div>
                 </div>
             </form>
         </div>
